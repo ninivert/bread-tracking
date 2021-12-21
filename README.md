@@ -51,13 +51,13 @@ A demonstration of the full pipeline, and how to use the main functions of the `
 
 The research process is as follows :
 
-1. Preprocess the movies obtained from the microscopy labs to store it in convenient `.npz` files. This is done in `datamanip/preproces.ipynb`.
+1. Preprocess the movies obtained from the microscopy labs to store it in convenient `.npz` files. This is done in [datamanip/preprocess.ipynb](datamanip/preprocess.ipynb).
 2. Segment the movies (here, done using YeaZ https://github.com/lpbsscientist/YeaZ-GUI), and store the segmentations as `.npz` files.
-3. Use the segmentation to extract geometrical features and generate cell graphs. This is done in `experiment_gnn/build_cellgraphs.ipynb`.
-4. Use the generated cell graphs to generate assignment graphs. This is done in `experiment_gnn/build_assgraphs.ipynb`.
-5. Train the GNN on the assignment graphs (node classification problem), using `experiment_gnn/run_train.py`. Results from these training sessions are found in `experiment_gnn/model_logs`, and can be visualized using Tensorboard (https://www.tensorflow.org/tensorboard/) by running `tensorboard --logdir=experiment_gnn/model_logs`.
-6. Assert the performance of the models on a test dataset, and compare with the built-in tracking algorithm of YeaZ. This is done in `experiment_gnn/compare_yeaz.ipynb`.
+3. Use the segmentation to extract geometrical features and generate cell graphs. This is done in [experiment_gnn/build_cellgraphs.ipynb](experiment_gnn/build_cellgraphs.ipynb).
+4. Use the generated cell graphs to generate assignment graphs. This is done in [experiment_gnn/build_assgraphs.ipynb](experiment_gnn/build_assgraphs.ipynb).
+5. Train the GNN on the assignment graphs (node classification problem), using [experiment_gnn/run_train.py](experiment_gnn/run_train.py). Results from these training sessions are found in [experiment_gnn/model_logs](experiment_gnn/run_train.py) (not included in the repository, but can be extracted from the data tarball), and can be visualized using Tensorboard (https://www.tensorflow.org/tensorboard/) by running `tensorboard --logdir=experiment_gnn/model_logs`.
+6. Assert the performance of the models on a test dataset, and compare with the built-in tracking algorithm of YeaZ. This is done in [experiment_gnn/compare_yeaz.ipynb](experiment_gnn/compare_yeaz.ipynb).
 
-Download the data at : https://transfer.sh/Y2GJNO/data.tar.gz. (Note : this link is valid until 4 jan 2022)
+Download the data tarball at : https://transfer.sh/Y2GJNO/data.tar.gz. (Note : this link is valid until 4 jan 2022)
 
 Note : this repository is slice of a larger unpublished (for now) repository that hosts more algorithms and scripts useful in the context of yeast cell microscopy analysis, hence the (unnecessarily) deep directory structure.
