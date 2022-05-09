@@ -51,7 +51,7 @@
 \title{Convolutional graph neural networks for tracking yeast cells}
 
 \author{
-	G. Brenna, F. Massard, N. Vadot\\
+	N. Vadot, F. Massard, G. Brenna, S. Rahi \\
 	\textit{EPFL, Switzerland}
 }
 
@@ -72,8 +72,15 @@
 
 
 \section{Prior work}
+	
+	Most  of the state-of-the-art cell tracking methods rely on conventional algorithms such as bipartite matching \cite{bipartite} and  Viterbi \cite{viterbi} \cite{viterbi2}.  However,  these traditional  approaches have limitations and deep  learning  methods  have  proven to have great potential  to  improve performance. In recent years, various CNN- and  recurrent  CNN-based  approaches have been introduced for tracking cells in microscopy images (e.g. \cite{he,delta,payer,hayashida,moen}).
 
-	The problem of tracking arises in other domains, such as reconstruction of particle trajectory in detectors \cite{dezoort_charged_2021}. In this approach, timestamped detection events in cylindrical coordinates are represented as nodes, and edge features are constructed by considering geometrical differences of the two detection events it connects. Features are then encoded with an MLP, and an edge-classification task is performed in order to attribute multiple detection events to the same particle. In our context, cells are not moving in a highly correlated manner like a particle through a detector, but the idea of encoding geometrical features can be repurposed.
+    While they have proven useful for general cell tracking tasks, currently available tracking tools designed specifically for yeast data still rely on traditional approaches. A robust deep learning-based cell tracker for yeast cells has not been proposed yet. Indeed, recent works on segmentation and tracking of budding yeast cells in brightfield microscopy focus rather on developing and training  networks for segmentation, than on updating tracking techniques that are still based on conventional algorithms \cite{dietler_convolutional_2020,yeastnet,kruitbosch}.
+    This paper proposes a novel graph neural network (GNN) approach for tracking yeast cells from segmentations \cite{dietler_convolutional_2020, Stringer2020.02.02.931238}.
+    
+	
+	It takes inspiration from tracking algorithms used in particle trajectory reconstruction in detectors \cite{dezoort_charged_2021}.
+	In this approach, timestamped detection events in cylindrical coordinates are represented as nodes, and edge features are constructed by considering geometrical differences of the two detection events it connects. Features are then encoded with an MLP, and an edge-classification task is performed in order to attribute multiple detection events to the same particle. In our context, cells are not moving in a highly correlated manner like a particle through a detector, but the idea of encoding geometrical features can be repurposed.
 
 	Tracking nodes, as they evolve in time-dependent graphs, can be reformulated as the problem of graph matching. \cite{kipf_semi-supervised_2017} considers the problem of finding a subgraph in a larger graph. It does this by applying graph convolutions, embedding the nodes in a high-dimensional space, and minimizing the total cost of pairwise euclidean distance to match nodes from the two graphs. We try to reformulate the tracking problem as a graph matching problem, and use a similar idea by maximizing a score to assign nodes between two graphs.
 
@@ -219,10 +226,18 @@
 \section{Conclusion}
 
 	We have shown that this graph neural network model is able to learn the structure of a yeast cell colony, and is able to reliably track cells from frame to frame. It has been shown that the model exceeds YeaZ's integrated tracker performance, using a relatively small training dataset of only 4 colonies growing over 15 hours and imaged every 5 minutes. If implemented in YeaZ's GUI, tracking tasks will become easier and significantly less time-consuming, especially for large colonies.
+	
+	Another advantage is that this model is computationally inexpensive and can be run on modest hardware. A pre-trained model can be downloaded on the github repository \cite{vadot_cs-433_2021} as well as a notebook demonstrating the full pipeline (see \texttt{experiment\_gnn/pipeline.ipynb} for more information).
 
 	One of the limitations of this model is the need to have segmented the images and verified the segmentations. We however argue that thanks to advancements in this domain \cite{dietler_convolutional_2020,stringer_cellpose_2020}, this has become a trivial task. Nevertheless, it is a good practice to verify the segmentations manually, and correct as needed.
 
-	The model presented in this report essentially only uses two graphs as an input, and could benefit from having a ``longer history'' of the colony in order to make better tracking predictions. Multiple papers \cite{singer_node_2019,jin_recurrent_2020,rossi_temporal_2020} address the problem of temporal graphs, and it might be worth investigating to further the research. In summary, using temporal graph networks are a promising approach to constructing lineages from only phase contrast (or bright field) microscopy movies. This would likely have to be coupled to an attention system, for which literature and implementations for graph neural networks already exist \cite{velickovic_graph_2018,brody_how_2021}.
+	The model presented in this report uses only two graphs as an input, and could benefit from having a ''longer history'' of the colony in order to make better tracking predictions. Multiple papers \cite{singer_node_2019,jin_recurrent_2020,rossi_temporal_2020} address the problem of temporal graphs, and it might be worth investigating to further the research.
+	
+	
+	The preprint version of another paper presents a similar deep learning approach but for general cell tracking (i.e. not specific to budding yeast)
+	\cite{GNN-tracking}. While the preprint is worth mentioning, performance is not comparable with ours, as their test sets does not contain nor consists of budding yeast cells. In addition, as their code has not been released, running our datasets on their model is not possible.
+	
+	In summary, using temporal graph networks are a promising approach to constructing lineages from only phase contrast (or bright field) microscopy movies. This would likely have to be coupled to an attention system, for which literature and implementations for graph neural networks already exist \cite{velickovic_graph_2018,brody_how_2021}.
 
 	% Rome wasn't built in a day, and graph neural networks aren't mastered in a month.
 

@@ -6,6 +6,20 @@
 	year = {2021},
 }
 
+@article {Stringer2020.02.02.931238,
+	author = {Stringer, Carsen and Michaelos, Michalis and Pachitariu, Marius},
+	title = {Cellpose: a generalist algorithm for cellular segmentation},
+	elocation-id = {2020.02.02.931238},
+	year = {2020},
+	doi = {10.1101/2020.02.02.931238},
+	publisher = {Cold Spring Harbor Laboratory},
+	abstract = {Many biological applications require the segmentation of cell bodies, membranes and nuclei from microscopy images. Deep learning has enabled great progress on this problem, but current methods are specialized for images that have large training datasets. Here we introduce a generalist, deep learning-based segmentation algorithm called Cellpose, which can very precisely segment a wide range of image types out-of-the-box and does not require model retraining or parameter adjustments. We trained Cellpose on a new dataset of highly-varied images of cells, containing over 70,000 segmented objects. To support community contributions to the training data, we developed software for manual labelling and for curation of the automated results, with optional direct upload to our data repository. Periodically retraining the model on the community-contributed data will ensure that Cellpose improves constantly.},
+	URL = {https://www.biorxiv.org/content/early/2020/02/03/2020.02.02.931238},
+	eprint = {https://www.biorxiv.org/content/early/2020/02/03/2020.02.02.931238.full.pdf},
+	journal = {bioRxiv}
+}
+
+
 
 @article{kipf_semi-supervised_2017,
 	title = {Semi-{Supervised} {Classification} with {Graph} {Convolutional} {Networks}},
@@ -174,6 +188,142 @@
 	pages = {5723},
 }
 
+@article{bipartite,
+
+  author={Chowdhury, Ananda S. and Chatterjee, Rohit and Ghosh, Mayukh and Ray, Nilanjan},
+
+  booktitle={2010 20th International Conference on Pattern Recognition}, 
+
+  title={Cell Tracking in Video Microscopy Using Bipartite Graph Matching}, 
+
+  year={2010},
+
+  volume={},
+
+  number={},
+
+  pages={2456-2459},
+
+  doi={10.1109/ICPR.2010.601}}
+
+ @article{viterbi, title={Global linking of cell tracks using the Viterbi algorithm}, volume={34}, DOI={10.1109/tmi.2014.2370951}, number={4}, journal={IEEE Transactions on Medical Imaging}, author={Magnusson, Klas E. and Jalden, Joakim and Gilbert, Penney M. and Blau, Helen M.}, year={2015}, pages={911–929}} 
+
+@article{viterbi2,  author={Hernandez, David E. and Chen, Steven W. and Hunter, Elizabeth E. and Steager, Edward B. and Kumar, Vijay},  booktitle={2018 International Conference on Manipulation, Automation and Robotics at Small Scales (MARSS)},   title={Cell Tracking with Deep Learning and the Viterbi Algorithm},   year={2018},  volume={},  number={},  pages={1-6},  doi={10.1109/MARSS.2018.8481231}}
+
+@article{he,
+author = {He, Tao and Mao, Hua and Guo, Jixiang and yi, Zhang},
+year = {2016},
+month = {11},
+pages = {},
+title = {Cell Tracking Using Deep Neural Networks with Multi-task Learning},
+volume = {60},
+journal = {Image and Vision Computing},
+doi = {10.1016/j.imavis.2016.11.010}
+}
+
+@article{delta,
+    doi = {10.1371/journal.pcbi.1007673},
+    author = {Lugagne, Jean-Baptiste AND Lin, Haonan AND Dunlop, Mary J.},
+    journal = {PLOS Computational Biology},
+    publisher = {Public Library of Science},
+    title = {DeLTA: Automated cell segmentation, tracking, and lineage reconstruction using deep learning},
+    year = {2020},
+    month = {04},
+    volume = {16},
+    url = {https://doi.org/10.1371/journal.pcbi.1007673},
+    pages = {1-18},
+    number = {4},
+}
+
+@article{payer,
+title = {Segmenting and tracking cell instances with cosine embeddings and recurrent hourglass networks},
+journal = {Medical Image Analysis},
+volume = {57},
+pages = {106-119},
+year = {2019},
+issn = {1361-8415},
+doi = {https://doi.org/10.1016/j.media.2019.06.015},
+url = {https://www.sciencedirect.com/science/article/pii/S136184151930057X},
+author = {Christian Payer and Darko Å tern and Marlies Feiner and Horst Bischof and Martin Urschler},
+keywords = {Cell, Tracking, Segmentation, Instances, Recurrent, Video, Embeddings},
+}
+
+
+@article{hayashida,
+author = {Hayashida, Junya and Bise, Ryoma},
+title = {Cell Tracking with Deep Learning for Cell Detection and Motion Estimation in Low-Frame-Rate},
+isbn = {978-3-030-32238-0},
+publisher = {Springer-Verlag},
+address = {Berlin, Heidelberg},
+url = {https://doi.org/10.1007/978-3-030-32239-7_44},
+doi = {10.1007/978-3-030-32239-7_44},
+abstract = {Cell behavior analysis in high-throughput biological experiments is important for research and discovery in biology and medicine. To perform the high-throughput experiments, it requires to capture images in low frame rate in order to record images on multi-points. In such a low frame rate image sequence, movements of cells between successive frames are often larger than distances to nearby cells, and thus current methods based on proximity do not work properly. In this study, we propose a cell tracking method that enables to track cells in low frame rate by simultaneously estimating all of the cell motions in successive frames. In the experiments under dense conditions in low frame rate, our method outperformed the other methods.},
+booktitle = {Medical Image Computing and Computer Assisted Intervention – MICCAI 2019},
+pages = {397–405},
+numpages = {9},
+keywords = {Cell tracking, Microscopy image analysis}
+}
+
+@article {moen,
+	author = {Moen, Erick and Borba, Enrico and Miller, Geneva and Schwartz, Morgan and Bannon, Dylan and Koe, Nora and Camplisson, Isabella and Kyme, Daniel and Pavelchek, Cole and Price, Tyler and Kudo, Takamasa and Pao, Edward and Graf, William and Van Valen, David},
+	title = {Accurate cell tracking and lineage construction in live-cell imaging experiments with deep learning},
+	elocation-id = {803205},
+	year = {2019},
+	doi = {10.1101/803205},
+	publisher = {Cold Spring Harbor Laboratory},
+	abstract = {Live-cell imaging experiments have opened an exciting window into the behavior of living systems. While these experiments can produce rich data, the computational analysis of these datasets is challenging. Single-cell analysis requires that cells be accurately identified in each image and subsequently tracked over time. Increasingly, deep learning is being used to interpret microscopy image with single cell resolution. In this work, we apply deep learning to the problem of tracking single cells in live-cell imaging data. Using crowdsourcing and a human-in-the-loop approach to data annotation, we constructed a dataset of over 11,000 trajectories of cell nuclei that includes lineage information. Using this dataset, we successfully trained a deep learning model to perform cell tracking within a linear programming framework. Benchmarking tests demonstrate that our method achieves state-of-the-art performance on the task of cell tracking with respect to multiple accuracy metrics. Further, we show that our deep learning-based method generalizes to perform cell tracking for both fluorescent and brightfield images of the cell cytoplasm, despite having never been trained on those data types. This enables analysis of live-cell imaging data collected across imaging modalities. A persistent cloud deployment of our cell tracker is available at http://www.deepcell.org.},
+	URL = {https://www.biorxiv.org/content/early/2019/10/14/803205},
+	eprint = {https://www.biorxiv.org/content/early/2019/10/14/803205.full.pdf},
+	journal = {bioRxiv}
+}
+
+@article{yeastnet,
+AUTHOR = {Salem, Danny and Li, Yifeng and Xi, Pengcheng and Phenix, Hilary and Cuperlovic-Culf, Miroslava and Kærn, Mads},
+TITLE = {YeastNet: Deep-Learning-Enabled Accurate Segmentation of Budding Yeast Cells in Bright-Field Microscopy},
+JOURNAL = {Applied Sciences},
+VOLUME = {11},
+YEAR = {2021},
+NUMBER = {6},
+ARTICLE-NUMBER = {2692},
+URL = {https://www.mdpi.com/2076-3417/11/6/2692},
+ISSN = {2076-3417},
+ABSTRACT = {Accurate and efficient segmentation of live-cell images is critical in maximizing data extraction and knowledge generation from high-throughput biology experiments. Despite recent development of deep-learning tools for biomedical imaging applications, great demand for automated segmentation tools for high-resolution live-cell microscopy images remains in order to accelerate the analysis. YeastNet dramatically improves the performance of the non-trainable classic algorithm, and performs considerably better than the current state-of-the-art yeast-cell segmentation tools. We have designed and trained a U-Net convolutional network (named YeastNet) to conduct semantic segmentation on bright-field microscopy images and generate segmentation masks for cell labeling and tracking. YeastNet enables accurate automatic segmentation and tracking of yeast cells in biomedical applications. YeastNet is freely provided with model weights as a Python package on GitHub.},
+DOI = {10.3390/app11062692}
+}
+
+@article{kruitbosch,
+    author = {Kruitbosch, Herbert T and Mzayek, Yasmin and Omlor, Sara and Guerra, Paolo and Milias-Argeitis, Andreas},
+    title = "{A convolutional neural network for segmentation of yeast cells without manual training annotations}",
+    journal = {Bioinformatics},
+    volume = {38},
+    number = {5},
+    pages = {1427-1433},
+    year = {2021},
+    month = {12},
+    abstract = "{Single-cell time-lapse microscopy is a ubiquitous tool for studying the dynamics of complex cellular processes. While imaging can be automated to generate very large volumes of data, the processing of the resulting movies to extract high-quality single-cell information remains a challenging task. The development of software tools that automatically identify and track cells is essential for realizing the full potential of time-lapse microscopy data. Convolutional neural networks (CNNs) are ideally suited for such applications, but require great amounts of manually annotated data for training, a time-consuming and tedious process.We developed a new approach to CNN training for yeast cell segmentation based on synthetic data and present (i) a software tool for the generation of synthetic images mimicking brightfield images of budding yeast cells and (ii) a convolutional neural network (Mask R-CNN) for yeast segmentation that was trained on a fully synthetic dataset. The Mask R-CNN performed excellently on segmenting actual microscopy images of budding yeast cells, and a density-based spatial clustering algorithm (DBSCAN) was able to track the detected cells across the frames of microscopy movies. Our synthetic data creation tool completely bypassed the laborious generation of manually annotated training datasets, and can be easily adjusted to produce images with many different features. The incorporation of synthetic data creation into the development pipeline of CNN-based tools for budding yeast microscopy is a critical step toward the generation of more powerful, widely applicable and user-friendly image processing tools for this microorganism.The synthetic data generation code can be found at https://github.com/prhbrt/synthetic-yeast-cells. The Mask R-CNN as well as the tuning and benchmarking scripts can be found at https://github.com/ymzayek/yeastcells-detection-maskrcnn. We also provide Google Colab scripts that reproduce all the results of this work.Supplementary data are available at Bioinformatics online.}",
+    issn = {1367-4803},
+    doi = {10.1093/bioinformatics/btab835},
+    url = {https://doi.org/10.1093/bioinformatics/btab835},
+    eprint = {https://academic.oup.com/bioinformatics/article-pdf/38/5/1427/42419704/btab835.pdf},
+}
+
+@article{GNN-tracking,
+  doi = {10.48550/ARXIV.2202.04731},
+  
+  url = {https://arxiv.org/abs/2202.04731},
+  
+  author = {Ben-Haim, Tal and Riklin-Raviv, Tammy},
+  
+  keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  
+  title = {Graph Neural Network for Cell Tracking in Microscopy Videos},
+  
+  publisher = {arXiv},
+  
+  year = {2022},
+  
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}
 
 @article{zhou_graph_2021,
 	title = {Graph {Neural} {Networks}: {A} {Review} of {Methods} and {Applications}},
