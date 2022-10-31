@@ -7,7 +7,7 @@ DATA_FILEPATHS = {
 	'assgraphs_colony0123_framediffall': sorted(glob('../data/assgraphs/colony00[0123]/framediff*/*.npz'))
 }
 
-from bread.algo.tracking.gnn import train, GNNNodeClassifier1, MLPNodeClassifier, AssignmentGraphDataset, InplaceAttrRecastTransform, EqualizeTransform, SplitDataModule
+from bread_tracking.algo.tracking.gnn import train, GNNNodeClassifier1, MLPNodeClassifier, AssignmentGraphDataset, InplaceAttrRecastTransform, EqualizeTransform, SplitDataModule
 import torch
 import torchvision.transforms as transforms
 import itertools

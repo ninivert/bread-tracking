@@ -1,7 +1,13 @@
-# Raw data
-data/
 # include data utilities
-!bread/data
+# Raw data
+!bread_tracking
+!bread_tracking/data
+!data
+data/*
+!experiment_gnn/data
+experiment_gnn/data/*
+!experiment_gnn/model_logs
+experiment_gnn/model_logs/*
 # include YeaZ tracking script
 !lib/YeaZ
 # archived code, no longer usedful
